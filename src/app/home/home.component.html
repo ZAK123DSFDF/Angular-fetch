@@ -15,6 +15,6 @@
     </ng-template>
   </ng-template>
 
-  <button [disabled]="loading">Get Another Joke</button>
+  <button (click)="fetchJoke()" [disabled]="loading">Get Another Joke</button>
   <button routerLink="/about">about</button>
 </div>
