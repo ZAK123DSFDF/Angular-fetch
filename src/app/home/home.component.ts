@@ -5,19 +5,18 @@ import {
   Inject,
   PLATFORM_ID,
 } from '@angular/core';
-import { JokeService } from './joke.service';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { delay, Subscription } from 'rxjs';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { JokeService } from '../joke.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  imports: [CommonModule, RouterLink],
+  templateUrl: './home.component.html',
 })
-export class AppComponent implements OnInit {
+export class HomeComponent implements OnInit {
   joke: string | null = null;
   loading: boolean = true;
   error: string = '';

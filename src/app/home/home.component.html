@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Random Dad Joke</h1>
+
+  <ng-container *ngIf="loading; else content">
+    <p>Loading...</p>
+  </ng-container>
+
+  <ng-template #content>
+    <ng-container *ngIf="error; else jokeContent">
+      <p class="error">{{ error }}</p>
+    </ng-container>
+
+    <ng-template #jokeContent>
+      <p>{{ joke }}</p>
+    </ng-template>
+  </ng-template>
+
+  <button (click)="fetchJoke()" [disabled]="loading">Get Another Joke</button>
+  <button routerLink="/about">about</button>
+</div>
